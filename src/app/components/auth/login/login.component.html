@@ -1,0 +1,27 @@
+<section class="section">
+    <form class="container is-max-desktop">
+        <div class="field">
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-success" type="text" name="username" placeholder="Username" [(ngModel)]="user.username">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-dice-d20"></i>
+                </span>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control has-icons-left">
+                <input class="input" type="password" name="password" placeholder="Password" [(ngModel)]="user.password">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </div>
+        </div>
+        <div class="field">
+            <p class="control">
+                <button class="button is-success" (click)="login()">
+                    Login
+                </button>
+            </p>
+        </div>
+    </form>
+</section>
