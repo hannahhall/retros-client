@@ -31,8 +31,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bulma/css/bulma.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/jqwidgets-ng/jqwidgets/styles/jqx.base.css",
+              "./node_modules/jqwidgets-ng/jqwidgets/styles/jqx.light.css"
             ],
             "scripts": []
           },
@@ -95,8 +96,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bulma/css/bulma.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/jqwidgets-ng/jqwidgets/styles/jqx.base.css",
+              "./node_modules/jqwidgets-ng/jqwidgets/styles/jqx.light.css"
             ],
             "scripts": []
           }

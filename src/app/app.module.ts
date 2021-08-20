@@ -12,6 +12,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { NavComponent } from './components/nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BoardComponent } from './components/board/board.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     NavComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,

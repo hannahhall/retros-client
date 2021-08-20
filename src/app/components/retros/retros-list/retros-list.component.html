@@ -1,1 +1,38 @@
-<p>retros-list works!</p>
+<section class="section">
+    <div class="container">
+        <h1>Retros</h1>
+        <table class="table is-striped is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Student</th>
+                    <th>Cohort</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Student</th>
+                    <th>Cohort</th>
+                </tr>
+            </tfoot>
+            <tbody *ngIf="retros.length else loading">
+                <tr *ngFor="let retro of retros" (click)="selectRetro(retro.id)">
+                    <td>{{retro.startDate}}</td>
+                    <td>{{retro.endDate}}</td>
+                    <td>{{retro.student.full_name}}</td>
+                    <td>{{retro.student.cohort.name}}</td>
+                </tr>
+            </tbody>
+            <ng-template #loading>
+                <tbody>
+                    <tr>
+                        <td>Waiting...</td>
+                    </tr>
+                </tbody>
+            </ng-template>
+        </table>
+    </div>
+</section>

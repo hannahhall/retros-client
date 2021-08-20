@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bulma/sass/utilities/derived-variables.sass';
+
+$table-row-hover-background-color: $primary;
+$table-striped-row-even-hover-background-color: $primary;
+
+
+@import 'bulma/bulma.sass';
+
+html, body, app-root {
+    min-height: 100vh;
+}

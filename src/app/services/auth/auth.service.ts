@@ -1,6 +1,7 @@
 import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class AuthService {
   httpOptions: { headers: HttpHeaders; };
   errors: any[] = [];
+  _isInstructor: BehaviorSubject<boolean | undefined> = new BehaviorSubject(undefined)
 
   get token() {
     return localStorage.getItem('token') || "";
@@ -33,6 +35,15 @@ export class AuthService {
         this.errors.push(err)
       }
     );
+  }
+
+  getIsInstructor() {
+    this.httpOptions.headers.append('Authorization', `Token ${this.token}`)
+    this.http.get(`${environment.api}/api/is_instructor`, this.httpOptions).subscribe(
+      (data: any) => {
+        this._isInstructor.next(data.is_instructor);
+      }
+    )
   }
 
   updateData(token: string) {

@@ -1,0 +1,28 @@
+<div class="columns is-multiline">
+    <div class="column is-half-tablet is-one-quarter-widescreen" *ngFor="let column of columns">
+        <article class="panel is-primary">
+            <p class="panel-heading">
+                {{column.label}}
+            </p>
+            <p class="panel-tabs">
+                <a>Add Another</a>
+            </p>
+
+            <ng-container *ngFor="let card of data">
+                    <div class="panel-block" *ngIf="card.category.id === column.id">
+                    <div class="card" >
+                        <div class="card-content">
+                            <div class="content">
+                                {{card.text}}
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a class="card-footer-item">Edit</a>
+                            <a class="card-footer-item">Delete</a>
+                        </footer>
+                    </div>
+                </div>
+            </ng-container>
+        </article>
+    </div>
+</div>
